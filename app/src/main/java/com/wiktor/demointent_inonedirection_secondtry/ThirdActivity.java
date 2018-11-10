@@ -28,13 +28,13 @@ public class ThirdActivity extends AppCompatActivity {
 
         if (myBundle3 != null) {
             // проверить доходит ли первое число из первой активити
-            a = myBundle3.getInt(MainActivity.FIRST_KEY, 3);
-            Toast.makeText(this, "Первое число, из первого Активити = " + a, Toast.LENGTH_SHORT).show();
+            //a = myBundle3.getInt(MainActivity.FIRST_KEY, 3);
+            //Toast.makeText(this, "Первое число, из первого Активити = " + a, Toast.LENGTH_SHORT).show();
             b = myBundle3.getInt(SecondActivity.FIRST_KEY_FROM_MAIN, 5);
             Toast.makeText(this, "Певое число = " + b, Toast.LENGTH_SHORT).show();
             c = myBundle3.getInt(SecondActivity.SECOND_KEY, 7);
             Toast.makeText(this, "Второе число = " + c, Toast.LENGTH_SHORT).show();
-            result =a * b;
+            result =c * b;
             String outNumber = String.valueOf(result);
             textViewResult.setText(String.valueOf(outNumber));
         } else textViewResult.setText("Что-то не так");
