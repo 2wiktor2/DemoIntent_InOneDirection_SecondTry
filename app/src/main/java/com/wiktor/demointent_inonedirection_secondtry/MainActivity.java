@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,19 +28,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        setFirstNumber();
+        if (setFirstNumber()) {
+            Intent myIntent1 = new Intent(this, SecondActivity.class);
+            Bundle myBundle = new Bundle();
+            myBundle.putInt(Constants.FIRST_KEY, number1);
+            myIntent1.putExtras(myBundle);
+            startActivity(myIntent1);
+        } else {
+            Toast.makeText(this, "Введите число", Toast.LENGTH_SHORT).show();
+        }
 
-        Intent myIntent1 = new Intent(this, SecondActivity.class);
-        Bundle myBundle = new Bundle();
-        myBundle.putInt(Constants.FIRST_KEY, number1);
-        myIntent1.putExtras(myBundle);
-        startActivity(myIntent1);
+
     }
 
-    public void setFirstNumber() {
+    public boolean setFirstNumber() {
         if (!editText1.getText().toString().equals("")) {
             number1 = Integer.parseInt(editText1.getText().toString());
+            return true;
         }
+        return false;
+
     }
 
 

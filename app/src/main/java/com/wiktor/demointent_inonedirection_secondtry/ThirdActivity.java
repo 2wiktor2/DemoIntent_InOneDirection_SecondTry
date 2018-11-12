@@ -29,7 +29,7 @@ public class ThirdActivity extends AppCompatActivity {
         if (myBundle3 != null) {
             a = myBundle3.getInt(Constants.FIRST_KEY, 5);
             Toast.makeText(this, "Певое число = " + b, Toast.LENGTH_SHORT).show();
-            c = myBundle3.getInt(Constants.SECOND_KEY, 7);
+            b = myBundle3.getInt(Constants.SECOND_KEY, 7);
             Toast.makeText(this, "Второе число = " + c, Toast.LENGTH_SHORT).show();
             result =a * b;
             String outNumber = String.valueOf(result);

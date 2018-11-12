@@ -37,20 +37,23 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        setSecondNumber();
-
-        Intent myIntent2 = new Intent(this, ThirdActivity.class);
-        Bundle myBundle2 = new Bundle();
-        myBundle2.putInt(Constants.SECOND_KEY, number2);
-        myBundle2.putInt(Constants.FIRST_KEY, x);
-        myIntent2.putExtras(myBundle2);
-        startActivity(myIntent2);
+        if(setSecondNumber()){
+            Intent myIntent2 = new Intent(this, ThirdActivity.class);
+            Bundle myBundle2 = new Bundle();
+            myBundle2.putInt(Constants.SECOND_KEY, number2);
+            myBundle2.putInt(Constants.FIRST_KEY, x);
+            myIntent2.putExtras(myBundle2);
+            startActivity(myIntent2);
+        }
+        Toast.makeText(this, "Введите число", Toast.LENGTH_SHORT).show();
     }
 
-    public void setSecondNumber() {
+    public boolean setSecondNumber() {
         if (!editText2.getText().toString().equals("")) {
             number2 = Integer.parseInt(editText2.getText().toString());
-        }
+            return true;
+        } return false;
+
     }
 
 }
