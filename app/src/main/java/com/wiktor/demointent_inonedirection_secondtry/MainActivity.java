@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public final static String FIRST_KEY = "первое число";
+
     EditText editText1;
     Button button1;
     int number1;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent myIntent1 = new Intent(this, SecondActivity.class);
         Bundle myBundle = new Bundle();
-        myBundle.putInt(FIRST_KEY, number1);
+        myBundle.putInt(Constants.FIRST_KEY, number1);
         myIntent1.putExtras(myBundle);
         startActivity(myIntent1);
     }
