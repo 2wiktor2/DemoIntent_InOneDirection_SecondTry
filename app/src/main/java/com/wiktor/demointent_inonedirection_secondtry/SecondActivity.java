@@ -9,13 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
-
     EditText editText2;
     Button button2;
-
-    int x;
-    int number2;
-
+    int x, number2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +19,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         editText2 = findViewById(R.id.edit_text_forNum2);
         button2 = findViewById(R.id.button);
-
         button2.setOnClickListener(this);
 
         Intent myIntent = getIntent();
@@ -32,7 +27,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             x = myB.getInt(Constants.FIRST_KEY, 999);
             Toast.makeText(this, "Первое число = " + x, Toast.LENGTH_LONG).show();
         }
-
     }
 
     @Override
@@ -53,7 +47,5 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             number2 = Integer.parseInt(editText2.getText().toString());
             return true;
         } return false;
-
     }
-
 }

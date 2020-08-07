@@ -21,9 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         editText1 = findViewById(R.id.edit_text);
         button1 = findViewById(R.id.button);
-
         button1.setOnClickListener(this);
-
     }
 
     @Override
@@ -37,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             Toast.makeText(this, "Введите число", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public boolean setFirstNumber() {
@@ -47,8 +43,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         return false;
-
     }
-
-
 }

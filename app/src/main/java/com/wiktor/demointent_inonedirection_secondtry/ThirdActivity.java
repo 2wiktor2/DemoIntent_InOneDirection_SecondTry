@@ -7,12 +7,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ThirdActivity extends AppCompatActivity {
-
     int a, b, c;
     int result;
-
     TextView textView1, textViewResult;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +18,6 @@ public class ThirdActivity extends AppCompatActivity {
 
         textView1 = findViewById(R.id.text_view1);
         textViewResult = findViewById(R.id.text_view2);
-
 
         Intent myIntent3 = getIntent();
         Bundle myBundle3 = myIntent3.getExtras();
@@ -35,7 +31,5 @@ public class ThirdActivity extends AppCompatActivity {
             String outNumber = String.valueOf(result);
             textViewResult.setText(String.valueOf(outNumber));
         } else textViewResult.setText("Что-то не так");
-
     }
-
 }
